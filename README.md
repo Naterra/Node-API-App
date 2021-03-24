@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-## Demo app
+# Demo app
 <a target='_blank' href='https://node-api-example-app1.herokuapp.com/'>Link >></a>
 
 ![image](https://user-images.githubusercontent.com/8204364/112247270-653ddc00-8c2a-11eb-9d9c-061e0d2b8c08.png)
