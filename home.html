@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <title>Node/Express API Example</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<style>
+    section{ margin:3em 0 }
+    code{
+        background: #eeeeeea8;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+<script>
+    function fetchUsers(){
+        fetch('/api/users')
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
+
+    function fetchUser(id){
+        fetch(`/api/users/${id}`)
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
+
+    function fetchUsersFilterByName(){
+        fetch(`/api/users?name=Mary`)
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
+</script>
+<body>
+
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <a href="#" class="brand-logo">Node API</a>
+        </div>
+    </div>
+</nav>
+
+<div class="row">
+    <div class="container">
+        <section>
+            <h1>Hi :)</h1>
+            <h5>I'm small but Powerfull API App</h5>
+            <p>I have few API endpoints ready to test. Open your Developer Console please (Network)</p>
+        </section>
+
+
+        <section>
+            <h4>Users API</h4>
+
+            <table>
+                <thead>
+                <tr>
+                    <td>API Endpoint</td>
+                    <td></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code>Fetch Users (GET /api/users)</code></td>
+                    <td><button onclick="fetchUsers()" class="waves-effect waves-light btn">Request</button></td>
+                </tr>
+
+                <tr>
+                    <td><code>Fetch Users with filter (GET /api/users?name=Mary)</code></td>
+                    <td><button onclick="fetchUsersFilterByName()" class="waves-effect waves-light btn">Request</button></td>
+                </tr>
+
+                <tr>
+                    <td><code>Fetch User (GET /api/users/10)</code></td>
+                    <td><button onclick="fetchUser(10)" class="waves-effect waves-light btn">Request</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h4>Important:</h4>
+            <p>- Node.js has no issues with updating Mongo Models </p>
+        </section>
+    </div>
+</div>
+
+
+
+</body>
+</html>
